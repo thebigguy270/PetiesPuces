@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" MasterPageFile="Imports.master" AutoEventWireup="true" CodeFile="PageMaster.master.cs" Inherits="Page_MasterPage" %>
+
+<asp:Content ContentPlaceHolderID="Head" runat="server">
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="Contenu" runat="server">
+    <form id="frmPrincipal" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <asp:HyperLink ID="hlLogo" NavigateUrl="~/Pages/Accueil.aspx" CssClass="navbar-brand" runat="server">
+                <!--<img class="brand-icon d-inline-block" style="width: 80px;" src="/Static/img/logo.jpg" />-->
+                <asp:Image runat="server" ID="imgLogo" class="brand-icon d-inline-block" style="width: 80px;" ImageUrl="~/Static/img/logo.jpg" />
+                <asp:Label runat="server" ID="lblAccueil" Text="Les petites puces" CssClass="ml-3"></asp:Label>
+            </asp:HyperLink>
+
+            <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+
+                <asp:Panel ID="pnVisiteur" runat="server">
+                    <ul class="navbar-nav navbar-space">
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Connexion.aspx">Se connecter</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Inscription.aspx">S'inscrire</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/OubliMDP.aspx">Mot de passe oublié</a>
+                        </li>
+                    </ul>
+                </asp:Panel>
+
+
+                <asp:Panel ID="pnClient" runat="server">
+                    <span class="text-light">Bonjour <asp:Label ID="lblNomClient" runat="server"></asp:Label></span><br />
+                    <ul class="navbar-nav navbar-space" runat="server">
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Client/Catalogue.aspx">Voir le catalogue</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Client/Panier.aspx">Liste des paniers</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Client/HistoriqueCommandes.aspx">Historique des commandes</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Courriel.aspx">Courriel<asp:Label ID="lblBadgeClient" class="ml-1 badge badge-light" runat="server"></asp:Label></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Client/ProfilClient.aspx">Changer le profil</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/InscriptionVendeur.aspx">S'inscrire comme vendeur</a>
+                        </li>
+                        <li class="nav-item active" runat="server">
+                            <asp:Button ID="btnDeconnexion1" OnClick="deconnecter" CssClass="btn btn-light btn-block h-100" UseSubmitBehavior="false" Text="Déconnexion" runat="server" />
+                        </li>
+                    </ul>
+                </asp:Panel>
+                <asp:Panel ID="pnVendeur" runat="server">
+                    <span class="text-light">Bonjour <asp:Label ID="lblNomVendeur" runat="server"></asp:Label></span><br />
+                    <ul class="navbar-nav navbar-space" runat="server">
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Vendeur/GestionCommandes.aspx">Commandes</a>
+                        </li>
+                        <li runat="server" id="Li1" class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Vendeur/GestionPanier.aspx">Panier</a>
+                        </li>
+                        <li runat="server" id="Li2" class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Vendeur/GestionCatalogue.aspx">Catalogue</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Vendeur/ProfilVendeur.aspx">Profil</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Courriel.aspx">Courriel<asp:Label ID="lblBadgeVendeur" CssClass="ml-1 badge badge-light" runat="server"></asp:Label></a>
+                        </li>
+                        <li class="nav-item active" runat="server">
+                            <asp:Button ID="btnDeconnexion" OnClick="deconnecter" CssClass="btn btn-light btn-block h-100" UseSubmitBehavior="false" runat="server" Text="Déconnexion" />
+                        </li>
+                    </ul>
+                </asp:Panel>
+                <asp:Panel ID="pnAdmin" runat="server">
+                    <span class="text-light">Bonjour <asp:Label ID="lblNomAdmin" runat="server"></asp:Label></span><br />
+                    <ul class="navbar-nav navbar-space">
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/Courriel.aspx">Courriel<asp:Label ID="lblBadgeAdmin" CssClass="ml-1 badge badge-light" runat="server"></asp:Label></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-secondary" href="/Pages/TestBD.aspx">Jeu de tests</a>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:Button ID="btnDeconnexion2" OnClick="deconnecter" CssClass="btn btn-light btn-block h-100" UseSubmitBehavior="false" runat="server" Text="Déconnexion" />
+                        </li>
+                    </ul>
+                </asp:Panel>
+                
+            </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="ContenuPrincipal" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</asp:Content>

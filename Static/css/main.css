@@ -1,0 +1,169 @@
+﻿.vertical-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.test-center {
+    text-align: center;
+}
+
+.test-table-center {
+    margin: 0 auto;
+}
+
+.table-center > tbody > tr > td, .table-center > tbody > tr > th {
+    text-align: center;
+}
+
+.table-padding > tbody > tr > td, .table-padding > tbody > tr > th {
+    padding: 5px;
+}
+
+table.table-1stcolumn-50 > tbody > tr:first-child > td:first-child {
+    width: 50%;
+}
+
+.classBoutonLeft {
+    margin-left: 5%;
+    float: left;
+}
+
+.classBoutonsMargins {
+    width: 40%;
+    margin-right: 5%;
+    margin-left: 5%
+}
+
+.classBoutonsMargins100 {
+    width: 100%;
+}
+
+.mydropdownlist {
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px 12px;
+    background-color: #3b3b3b;
+}
+
+.labelTest {
+    display: inline-block;
+    color: #808080;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Breadcrumbs */
+div.breadcrumb-custom {
+  padding: 10px 16px;
+  background-color: #eee;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+span.breadcrumb-custom-separator {
+    padding-left: 10px;
+    padding-right: 10px;
+    user-select: none;
+}
+/*
+div.breadcrumb-custom input+input:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+*/
+div.breadcrumb-custom span+span:before {
+    padding: 8px;
+    color: black;
+    content: ">";
+}
+
+table.table-vertical-middle > tbody > tr > td {
+    vertical-align: middle;
+}
+
+table.table-no-top-border > tbody > tr > td {
+    border-top: 0px;
+}
+
+input.image-panier {
+    width: 75px;
+    height: 75px;
+}
+
+.image-panier {
+    /*width: 75px;*/
+    height: 75px;
+}
+
+@media only screen and (max-width: 990px)
+{
+    ul.navbar-space li+li {
+        margin-top: 4px;
+    }
+}
+
+@media only screen and (min-width: 991px)
+{
+    ul.navbar-space li + li {
+        margin-left: 4px;
+    }
+}
+
+.fake-button {
+    cursor: pointer;
+    user-select: none;
+}
+.scrollClass {
+    height: 400px !important;
+    overflow: auto;
+}
+
+.centertitre {
+    text-align: center;
+}
+.droittitre {
+    text-align: right;
+}
+
+.fake-button.card-header:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.moneyDroite {
+    text-align: right;
+}
+
+/* extensions bootstrap */
+@media (min-width: 1800px) {
+    .col-fhd-4 {
+        ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-1200-4 {
+        ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+
+.col-fhd-4, .col-1200-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.bg-dark-blue {
+    color: white !important;
+    background-color: #566673 !important;
+}
+
+.bg-dark {
+    color: white !important;
+}
